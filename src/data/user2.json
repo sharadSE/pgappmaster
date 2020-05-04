@@ -1,0 +1,17 @@
+{
+	
+	"tenant_id" : "USER2",
+	"first_name" : "Sharad",
+	"last_name" : "Dubey",
+	"address" : "3, Atul Nagar",
+	"city" : "Varanasi",
+	"state" : "Uttar Pradesh",
+	"pincode" : 212011,
+	"email" : "sharaddubey@gmail.com",
+	"password" : "1234567890",
+	"mobile" : "9125909490",
+	"pg_id" : null,
+	"room_id" : null,
+	"amintities_opted" : [null],
+	"rent" : null
+}

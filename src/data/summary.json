@@ -1,0 +1,26 @@
+{
+    "first_name" : "Siddharth",
+	"last_name" : "Choudhary",
+	"user_contact" : "7898537874",
+	"pg_name" : "Shree Ganesh PG",
+	"address" : "Narayan Baugh, Front of Noble Hospital",
+	"area" : "Hadapsar",
+    "city" : "Pune",
+    "pincode" : 411028,
+    "room_type" : 3,
+    "rent" : 4000,
+	"amenities_opted" : [
+        {
+            "name" : "wifi",
+            "charge" : 450
+        },
+        {
+        	"name" : "meal",
+        	"charge" : 800
+        }
+    ],
+	"start_date" : "2020-05-12",
+	"end_date" : "2020-09-12",
+	"total_days" : 123,
+	"total_rent" : 5500
+}

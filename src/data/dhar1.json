@@ -1,0 +1,62 @@
+{
+	"pg_id" : "MP789",
+	"name" : "Dindayal PG",
+	"address" : "Narayan Baugh, Front of Noble Hospital",
+	"city" : "Dhar",
+	"state" : "Madhya Pradesh",
+	"pincode" : 454001,
+	"rent_min" : "Rs.4000",
+	"rent_max" : "Rs.6500",
+	"aminities" : 
+		{
+			"wifi" : null,
+			"washing_machine" : null,
+			"cupboard" : null,
+			"bed" : null,
+			"meal" : null,
+			"swimming_pool" : null,
+			"gym" : null
+		},
+	
+	"rooms" : [
+		{
+			"id" : "MP789_R1",
+			"no_of_bed" : 3,
+			"rent_per_bed" : "Rs.4000",
+			"bed_1" : null,
+			"bed_2" : null,
+			"bed_3" : null,
+			"allotment" : [
+				{
+					"bed_id" : "MP789_R1_B1",
+					"tenant_id" : null
+				},
+				{
+					"bed_id" : "MP789_R1_B2",
+					"tenant_id" : null
+				},
+				{
+					"bed_id" : "MP789_R1_B3",
+					"tenant_id" : null
+				}
+			]
+		},
+		{
+			"id" : "MP789_R2",
+			"no_of_bed" : 2,
+			"rent_per_bed" : "Rs.4500",
+			"bed_1" : null,
+			"bed_2" : null,
+			"allotment" : [
+				{
+					"bed_id" : "MP789_R1_B1",
+					"user_id" : null
+				},
+				{
+					"bed_id" : "MP789_R1_B2",
+					"user_id" : null
+				}
+			]
+		}
+	]
+}

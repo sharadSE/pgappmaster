@@ -1,0 +1,163 @@
+{
+    "pune":[
+        {
+            "pg_id": "PG111",
+            "name": "Ssiram PG",
+            "address": "Cosmos Magarpatta, Behind Tower 2",
+            "owner_name": "Siddharth Choudhary",
+            "contact": 7898537874,
+            "area": "Viman Nagar",
+            "city": "Pune",
+            "state": "Maharashtra",
+            "pincode": 411028,
+            "rent_min": 6000,
+            "rent_max": 9500,
+            "total_rooms": 2,
+            "total_beds": 5,
+            "available_beds": 5,
+            "basicAmenities": {
+                "bed":  null,
+                "cupboard":  null,
+                "ac":  null
+            },
+            "optionalAmenities": [
+              {
+                  "name" : "wifi",
+                  "availability" : true,
+                  "charge" : 600
+                },
+                {
+                  "name" : "gym",
+                  "availability" : true,
+                  "charge" : 400
+                }
+
+            ],
+            "rooms": [
+              {
+                "id": "Room A",
+                "no_of_bed": 3,
+                "rent_per_bed": 4000,
+                "bedList": [
+                  {
+                    "bed_id": "Bed A1",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  },
+                  {
+                    "bed_id": "Bed A2",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  },
+                  {
+                    "bed_id": "Bed A3",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  }
+                ]
+              },
+              {
+                "id": "Room B",
+                "no_of_bed": 2,
+                "rent_per_bed": 4500,
+                "bedList": [
+                  {
+                    "bed_id":  "Bed B1",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  },
+                  {
+                    "bed_id":  "Bed B2",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "pg_id": "PG111",
+            "name": "Ganesh PG",
+            "address": "Cosmos Magarpatta, Behind Tower 2",
+            "owner_name": "Siddharth Choudhary",
+            "contact": 7898537874,
+            "area": "Viman Nagar",
+            "city": "Pune",
+            "state": "Maharashtra",
+            "pincode": 411028,
+            "rent_min": 6000,
+            "rent_max": 9500,
+            "total_rooms": 2,
+            "total_beds": 5,
+            "available_beds": 5,
+            "basicAmenities": {
+                "bed":  null,
+                "cupboard":  null,
+                "ac":  null
+            },
+            "optionalAmenities": [
+              {
+                "name" : "washing mach",
+                "availability" : true,
+                "charge" : 600
+              },
+              {
+                "name" : "gym",
+                "availability" : true,
+                "charge" : 400
+              }
+            ],
+            "rooms": [
+              {
+                "id": "Room A",
+                "no_of_bed": 3,
+                "rent_per_bed": 4000,
+                "bedList": [
+                  {
+                    "bed_id": "Bed 1",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  },
+                  {
+                    "bed_id": "Bed 2",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  },
+                  {
+                    "bed_id": "Bed 3",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  }
+                ]
+              },
+              {
+                "id": "Room B",
+                "no_of_bed": 2,
+                "rent_per_bed": 4500,
+                "bedList": [
+                  {
+                    "bed_id": "bed 11",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  },
+                  {
+                    "bed_id": "bed 12",
+                    "tenant_id":   null,
+                    "start_date":   null,
+                    "end_date":   null
+                  }
+                ]
+              }
+            ]
+          }
+    ]
+}

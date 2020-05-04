@@ -1,0 +1,17 @@
+{
+	
+	"tenant_id" : "USER1",
+	"first_name" : "Siddharth",
+	"last_name" : "Choudhary",
+	"address" : "13/3, Kabir Marg",
+	"city" : "Dhar",
+	"state" : "Madhya Pradesh",
+	"pincode" : 454001,
+	"email" : "siddharth005@gmail.com",
+	"password" : "1234567890",
+	"mobile" : "7898537874",
+	"pg_id" : null,
+	"room_id" : null,
+	"amintities_opted" : [null],
+	"rent" : null,
+}

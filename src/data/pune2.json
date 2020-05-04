@@ -1,0 +1,57 @@
+{
+	"pg_id" : "PG123",
+	"name" : "Sri Ganesh PG",
+	"address" : "Narayan Baugh, Front of Noble Hospital",
+	"city" : "Pune",
+	"state" : "Maharashtra",
+	"pincode" : 411028,
+	"rent_min" : "Rs.5500",
+	"rent_max" : "Rs.7500",
+	"aminities" : 
+		{
+			"wifi" : null,
+			"washing_machine" : null,
+			"cupboard" : null,
+			"bed" : null,
+			"meal" : null,
+			"swimming_pool" : null,
+			"gym" : null
+		},
+	
+	"rooms" : [
+		{
+			"id" : "PG123_R1",
+			"no_of_bed" : 3,
+			"rent_per_bed" : "Rs.5500",
+			"allotment" : [
+				{
+					"bed_id" : "PG123_R1_B1",
+					"tenant_id" : null
+				},
+				{
+					"bed_id" : "PG123_R1_B2",
+					"tenant_id" : null
+				},
+				{
+					"bed_id" : "PG123_R1_B3",
+					"tenant_id" : null
+				}
+			]
+		},
+		{
+			"id" : "PG123_R2",
+			"no_of_bed" : 2,
+			"rent_per_bed" : "Rs.6000",
+			"allotment" : [
+				{
+					"bed_id" : "PG123_R1_B1",
+					"user_id" : null
+				},
+				{
+					"bed_id" : "PG123_R1_B2",
+					"user_id" : null
+				}
+			]
+		}
+	]
+}
