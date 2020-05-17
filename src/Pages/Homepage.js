@@ -3,12 +3,16 @@ import ReactDom from 'react-dom'
 import './Home.css'
 import Header from '../header/header'
 import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import '../App.css'
 import Citynames from '../data/city.json'
 import Cityareas from '../data/cityarea.json'
 import queryString from 'query-string'
+import PgDetails from '../feature/pgdetails/index'
+import Pgdetails from './Pgdetails'
 import axios from 'axios'
 import { compose } from 'redux'
+import LoginPartner from './LoginPartner'
 
 export default class Homepage extends Component {
   constructor(props) {
@@ -16,15 +20,16 @@ export default class Homepage extends Component {
   
     this.state = {
        cityname:'Pune',
-       cityarea:'Magarpatta',
-       startdate:'2020-06-03',
-       enddate:'2020-03-03',
-       noofguest:'0',
+       cityarea:'Hadapsar',
+       startdate:'2020-05-31',
+       enddate:'2020-06-29',
+       noofguest:'2',
     }
   }
   citynameHandler=(event)=>{
     this.setState({
-      cityname:event.target.value
+      cityname:event.target.value,
+      
     })
   }
   cityareaHandler=(e)=>{
@@ -47,27 +52,10 @@ export default class Homepage extends Component {
         noofguest:e.target.value
       })
   }
-  clickHandler = (event) =>{
-  }
-// here we read from URL---------------------> /?cityname=aaa&cityarea=fff&startdate=03/03/2003&enddate=02/02/2005&noofguest=45
-  componentDidMount() {
-    axios.get('https://jsonplaceholder.typicode.com/poststcdrc')
-      .then(response =>{
-        console.log(response)
-      })
-      .catch(error =>{
-        console.log('item not found')
-      })
-    // ====================================================================================
-    const values = queryString.parse(this.props.location.search)
-    console.log(values.cityname) 
-    console.log(values.cityarea)
-    console.log(values.startdate)
-    console.log(values.enddate)
-    console.log(values.noofguest)
-  }
+  clickHandler = (e) =>{
+    e.preventDefault();
 
- 
+}
   render() {
     const myvar = this.state.cityname;
     return (
@@ -112,16 +100,26 @@ export default class Homepage extends Component {
       </div>
       <div className="form-group">
         <label className="label">No. of Guest</label>
-        <input type="number" value={this.noofguest} onFocus={this.noofguestHandler} placeholder="Number Of Guest" required type="number" className="input" required/>
+        <input type="number" value={this.noofguest} onChange={this.noofguestHandler} placeholder="Number Of Guest" required type="number" className="input" required/>
       </div>
       
       <div id="Go" title="Submit" className="form-group">
       
-        <button type="submit" className="button" onClick={this.clickHandler}><NavLink to='/pgdetails'> Go</NavLink></button>
-        
+        <button type="submit" className="button" onClick={this.clickHandler}>
+              <Link to={{
+                  pathname:'/pgdetails',
+                  data:{
+                    cityname:this.state.cityname,
+                    cityarea:this.state.cityarea,
+                    startdate:this.state.startdate,
+                    enddate:this.state.enddate,
+                    noofguest:this.state.noofguest
+                  },
+              }}>Go</Link></button>
       </div>
-      
     </form>
+    { console.log('Homepage--------js')
+    }
   </div>
         </div>
       </>

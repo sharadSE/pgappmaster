@@ -31,6 +31,12 @@ export default class Roomdetaillist extends Component {
     componentDidMount (){
         disabledButtons: new Array(2).fill(true)
     }
+    shouldComponentUpdate(nextProps, nextState){
+        if(this.props.data.pg_id!=nextProps.pg_id){
+            return true
+        }
+        return false
+    }
     render() {
         let message
         if(this.state.signal){
@@ -43,13 +49,29 @@ export default class Roomdetaillist extends Component {
             <>
                 <center><label>{message}</label></center>
                 {
-                  Object.keys(this.props.data.rooms).map((data,key)=>(
+                    console.log('room detail list problem--------------------------'),
+                    console.log(this.props.data.city),
+                    console.log(this.props.data.address),
+                    console.log(this.props.data.basicAmenities),
+                    console.log(this.props.data.total_beds),
+                    console.log(this.props.data.available_beds)
+                }
+                {
+                    // <h1>{this.props.data.rooms.room_id}</h1>
+                }
+                {
+                    // this.props.data.rooms.map(data=>(
+                    //     <li>{data.room_id}</li>
+                    // ))
+                }
+                {/* {
+                  this.props.data.rooms.map((data,key)=>(
                     <div className="dropdown">
                         <button className="dropbtn" key={key}>
-                                    {this.props.data.rooms[data].id}</button>
+                                    {this.props.data.rooms[data].room_id}</button>
                         <div className="dropdown-content">
                         {
-                            Object.keys(this.props.data.rooms[data].bedList).map((d,key1)=>(
+                            this.props.data.rooms[data].bedList.map((d,key1)=>(
                                         <a href="#"
                                             onClick={(event)=>this.props.addBed(this.props.data.rooms[data].bedList[d],this.props.data.rooms[data].rent_per_bed)}
                                             >{this.props.data.rooms[data].bedList[d].bed_id}</a>                          
@@ -57,17 +79,18 @@ export default class Roomdetaillist extends Component {
                         }
                         </div>
                    </div>))
-                }
-                <div className="amini-block">
+                } */}
+                {/* this.props.data.optionalAmenities[data].charge */}
+                {/* <div className="amini-block">
                 {
-                    Object.keys(this.props.data.optionalAmenities).map((data,key)=>(
+                    this.props.data.optionalAmenities.map((data,key)=>(
                         
-                        <label className="amini-container">{this.props.data.optionalAmenities[data].name}
+                        <label className="amini-container">{data}
                         <input type="checkbox" onClick={()=>this.props.addAmin(this.props.data.optionalAmenities[data])} onChange={this.isChecked} value={this.state.isCheck}/><span className="checkmark"></span>
                         </label>
                     ))
                 }
-                </div>
+                </div> */}
             </>
         )
     }
