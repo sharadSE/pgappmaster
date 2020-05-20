@@ -20,8 +20,9 @@ class RoomDetails extends Component {
     })
     this.setState({isFetching:true})
   }
-  clickHandler=(e)=>{
-    e.preventDefault();
+  clickHandler=(event)=>{
+    event.preventDefault();
+    this.props.bookBed();
   }
   // 
     render() {
@@ -38,22 +39,19 @@ class RoomDetails extends Component {
                       <div className="address">  {this.props.data.city}  {this.props.data.state}  {this.props.data.pincode}</div>
                       <button onClick={this.props.closePopup} >X</button>
                       <Roomdetaillist data={this.state.moredetails} addBed={this.props.addBed} addAmin={this.props.addAmin}></Roomdetaillist>
-                    <label>Total no of room selected : {this.props.count}</label>
                     
                     {console.log(this.props.bList)}
                     {
                       this.props.bList.map((dat,key)=>(
-                        <li>`{dat.bed.bed_id} {this.props.bprice}`</li>
+                        <li>`bed {key}--->{this.props.bprice}`</li>
                       ))
                     }
                     {
                       this.props.aList.map((data,key)=>(
-                        <li>`{data.name} {data.charge}`</li>
+                        <li>`{data.name}--->{data.charge}`</li>
                       ))
                     } 
-                    {<li>Total Price: {this.props.tprice}</li>}
-                    <button onClick={this.clickHandler}><NavLink to='/Summary'>Book</NavLink></button>
-                    <button onClick={()=>this.props.bookBed()}>Add</button>
+                    <button onClick={(event)=>this.clickHandler(event)}><NavLink to='/Summary'>Book</NavLink></button>
                     {/* <button onClick={()=>this.props.bookBed()}>Book</button> */}
                     {/* </NavLink> */}
                   {/* <button onClick={this.props.closePopup}>Continue</button>*/}

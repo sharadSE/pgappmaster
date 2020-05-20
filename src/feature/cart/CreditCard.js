@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css'
 import axios from './erer';
+import { connect } from 'react-redux'
 import { useHistory } from 'react-router';
 function CreditCard() {
     const history = useHistory();
@@ -101,4 +102,4 @@ function CreditCard() {
        tprice: state.bedBook.totalprice,
     }
   }
-   export default CreditCard
+   export default connect(mapStateToProps)(CreditCard)
