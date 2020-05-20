@@ -11,7 +11,8 @@ export default class Pgdetailslist extends Component {
              showPopup:false,
               }
     }
-    togglePopup() {
+    togglePopup(e) {
+    e.preventDefault();
         this.setState({
           showPopup: !this.state.showPopup
         });

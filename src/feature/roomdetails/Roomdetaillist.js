@@ -50,11 +50,13 @@ export default class Roomdetaillist extends Component {
                 <center><label>{message}</label></center>
                 {
                     console.log('room detail list problem--------------------------'),
-                    console.log(this.props.data.city),
-                    console.log(this.props.data.address),
-                    console.log(this.props.data.basicAmenities),
+                    console.log(this.props.data),
+                    console.log(this.props.data.pincode),
+                    console.log(this.props.data.optionalAmenities),
                     console.log(this.props.data.total_beds),
-                    console.log(this.props.data.available_beds)
+                    console.log(this.props.data.available_beds),
+                    console.log(this.props.data.rooms)
+
                 }
                 {
                     // <h1>{this.props.data.rooms.room_id}</h1>
@@ -64,33 +66,35 @@ export default class Roomdetaillist extends Component {
                     //     <li>{data.room_id}</li>
                     // ))
                 }
-                {/* {
+                {/* ------------------------------------------------------ */}
+                {/* {this.props.data.rooms[data].room_id} */}
+                {/* ----------------------------------------------- */}
+                {
                   this.props.data.rooms.map((data,key)=>(
                     <div className="dropdown">
                         <button className="dropbtn" key={key}>
-                                    {this.props.data.rooms[data].room_id}</button>
+                                    Room {key}</button>
                         <div className="dropdown-content">
                         {
-                            this.props.data.rooms[data].bedList.map((d,key1)=>(
+                                    data.bedList.map((d,key1)=>(
                                         <a href="#"
-                                            onClick={(event)=>this.props.addBed(this.props.data.rooms[data].bedList[d],this.props.data.rooms[data].rent_per_bed)}
-                                            >{this.props.data.rooms[data].bedList[d].bed_id}</a>                          
+                                            onClick={(event)=>this.props.addBed(d,data.rent_per_bed)}
+                                            >bed {key1}</a>                          
                             ))
                         }
                         </div>
                    </div>))
-                } */}
-                {/* this.props.data.optionalAmenities[data].charge */}
-                {/* <div className="amini-block">
+                }
+                <div className="amini-block">
                 {
                     this.props.data.optionalAmenities.map((data,key)=>(
                         
-                        <label className="amini-container">{data}
-                        <input type="checkbox" onClick={()=>this.props.addAmin(this.props.data.optionalAmenities[data])} onChange={this.isChecked} value={this.state.isCheck}/><span className="checkmark"></span>
+                        <label className="amini-container">{data.name}
+                        <input type="checkbox" onClick={()=>this.props.addAmin(data)} onChange={this.isChecked} value={this.state.isCheck}/><span className="checkmark"></span>
                         </label>
                     ))
                 }
-                </div> */}
+                </div>
             </>
         )
     }

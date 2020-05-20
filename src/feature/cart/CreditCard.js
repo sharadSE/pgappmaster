@@ -5,8 +5,34 @@ import axios from './erer';
 import { useHistory } from 'react-router';
 function CreditCard() {
     const history = useHistory();
-  
+    let payload = {
+        first_name : "Siddharth",
+        last_name : "Choudhary",
+        bed_id : "BR5eb4fcc1e302340a141c374e11",
+        amenities_opted  : [
+            {
+                name : "wifi",
+                charge : 450
+            },
+            {
+              name : "meal",
+              charge : 800
+            }   
+        ],
+      start_date : "2020-05-12",
+      end_date : "2020-09-12",
+      total_rent : 5250
+    }
+    let user_id="tenet9000000";
       const handleClick = () => {
+          
+          axios.post('http://localhost:8082/bookpg/'+user_id,payload)
+          .then(response=>{
+            console.log(response)
+          })
+          .catch(err=>{
+            console.log("Failed post")
+          })
           history.push("/");
           alert("Payment done!!");
       }
@@ -65,5 +91,14 @@ function CreditCard() {
         </form>
       </div>
     );
+  }
+  function mapStateToProps(state){
+    return {
+       count: state.bedBook.bookingCount,
+       bList: state.bedBook.bedList,
+       aList: state.bedBook.aminList,
+       bprice: state.bedBook.bedprice,
+       tprice: state.bedBook.totalprice,
+    }
   }
    export default CreditCard

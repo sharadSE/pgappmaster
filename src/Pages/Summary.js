@@ -13,13 +13,13 @@ class Summary extends Component {
             Users: []
         };
     }
-    componentDidMount() {
-        axios.get(`https://jsonplaceholder.typicode.com/users`)
-          .then(res => {
-            const Users= res.data;
-            this.setState({ Users });
-          })
-      }
+    // componentDidMount() {
+    //     axios.get(`https://jsonplaceholder.typicode.com/users`)
+    //       .then(res => {
+    //         const Users= res.data;
+    //         this.setState({ Users });
+    //       })
+    //   }
 
     render() {
         return (
@@ -29,14 +29,14 @@ class Summary extends Component {
                 <div style={{color:"black",background:"#785587",width:"510px",height:"460px",marginLeft:"165px",marginTop:"50px",borderRadius:"10px"}}>
                 <p style={{left:"-180px",fontSize:"30px",fontWeight:"bolder",marginTop:"5px"}}>CheckOut</p>
                 <h5> Booking Summary</h5>
-                <ul>
+                {/* <ul>
                     { this.state.Users.map(function (user){
                     return([
                     <li>{user.name}</li>
 
                     ]);
                 })}
-                </ul>
+                </ul> */}
                 <h5> Booking Charge:####</h5>
                 <h5> Total:#######</h5>
                 </div>
@@ -64,9 +64,15 @@ class Summary extends Component {
         )}
     }
 
-const mapStateToProps=(state)=>({
-    pgname:state.pgname
-}
+function mapStateToProps(state){
+    return {
+       count: state.bedBook.bookingCount,
+       bList: state.bedBook.bedList,
+       aList: state.bedBook.aminList,
+       bprice: state.bedBook.bedprice,
+       tprice: state.bedBook.totalprice,
+    }
+  }
 
-)
+
 export default connect(mapStateToProps)(Summary);
