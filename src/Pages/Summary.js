@@ -4,7 +4,7 @@ import CreditCard from '../feature/cart/CreditCard'
 // import './Summary.css';
 // import { TiShoppingCart } from "react-icons/ti";
 // import { IoIosTrash } from "react-icons/io";
-import axios from '../feature/cart/erer';
+import axios from 'axios';
 class Summary extends Component {
 
     constructor(props) {
@@ -25,12 +25,12 @@ class Summary extends Component {
                 console.log(this.props)}
                 {
                       this.props.bList.map((dat,key)=>(
-                        <li>` Bed{key}             {this.props.bprice}`</li>
+                        <li>` Bed{key} {this.props.bprice}`</li>
                       ))
                     }
                     {
                       this.props.aList.map((data,key)=>(
-                        <li>`   {data.name}             {data.charge}`</li>
+                        <li>`   {data.name} {data.charge}`</li>
                       ))
                     } 
                     {<li>Total Price: {this.props.tprice}</li>}

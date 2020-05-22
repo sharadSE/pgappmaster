@@ -1,0 +1,18 @@
+{
+	"first_name" : "Siddharth",
+	"last_name" : "Choudhary",
+	"bed_id" : "BR5eb0d4ab69cb8f606eec9a4510",
+	"amenities_opted" : [
+        {
+            "name" : "wifi",
+            "charge" : 450
+        },
+        {
+        	"name" : "meal",
+        	"charge" : 800
+        }   
+    ],
+	"start_date" : "2020-05-12",
+	"end_date" : "2020-09-12",
+	"total_rent" : 5250
+}

@@ -18,6 +18,7 @@ export default class Pgdetails extends Component {
     })
     .catch(error =>{
      alert('There is No PGs available')
+            this.props.history.push("/")
   })
   this.setState({isFetching:true})
     }
