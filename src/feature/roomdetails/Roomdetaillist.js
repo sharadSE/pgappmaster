@@ -75,11 +75,11 @@ export default class Roomdetaillist extends Component {
                         <button className="dropbtn" key={key}>
                                     Room {key}</button>
                         <div className="dropdown-content">
-                        {
+                        {       
                                     data.bedList.map((d,key1)=>(
                                         <a href="#"
                                             onClick={(event)=>this.props.addBed(d,data.rent_per_bed)}
-                                            >bed {key1}</a>                          
+                                    >Bed {d.tenant_id ? '-X' : key+1}</a>                          
                             ))
                         }
                         </div>

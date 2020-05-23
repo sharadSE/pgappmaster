@@ -26,7 +26,8 @@ export default class Pgdetailslist extends Component {
         <div className="list-container">
         <div className="place booked">
             {
-                console.log('pgdetaillist')
+                console.log('pgdetaillist'),
+                console.log(this.props)
             }
         <img src={imj}></img>
             <h3>{this.props.data.name}</h3>

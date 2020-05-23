@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Roomdetaillist from './Roomdetaillist'
-import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import './pop.css'
@@ -31,8 +31,9 @@ class RoomDetails extends Component {
                   <div className='popup'>
                     <div className='popup-inner'>
                       {
-                        console.log('index'),
-                        console.log(this.state.moredetails)
+                        console.log('index roomdetails'),
+                        console.log(this.state.moredetails),
+                        console.log(this.props.start_date)
                       }
                       <h3>{this.props.data.name}</h3>
                       <div className="address">{this.props.data.address}</div>
@@ -51,7 +52,10 @@ class RoomDetails extends Component {
                         <li>`{data.name}--->{data.charge}`</li>
                       ))
                     } 
-                    <button onClick={(event)=>this.clickHandler(event)}><NavLink to='/Summary'>Book</NavLink></button>
+                    <button onClick={(event)=>this.clickHandler(event)}>
+                    <Link to={{
+                    pathname:'/Summary'
+                    }}>Book</Link></button>
                     {/* <button onClick={()=>this.props.bookBed()}>Book</button> */}
                     {/* </NavLink> */}
                   {/* <button onClick={this.props.closePopup}>Continue</button>*/}

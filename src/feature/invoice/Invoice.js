@@ -38,7 +38,7 @@ export default class Invoice extends Component {
                         </tr>
                         <tr>
                             <td>Name</td>
-                            <td>`{this.props.data.first_name}{this.props.data.last_name}`</td>
+                            <td>`{this.props.data.first_name} {this.props.data.last_name}`</td>
                         </tr>
                         <tr>
                             <td>User Contact</td>
@@ -66,7 +66,13 @@ export default class Invoice extends Component {
                         </tr>
                         <tr>
                             <td>Aminities Opted</td>
-                            <td>Helen Bennett</td>
+                            <td>
+                                {
+                                    this.props.data.amenities_opted.map((data,key)=>(
+                                        <li>{data.name}</li>
+                                    ))
+                                }
+                            </td>
                         </tr>
                         <tr>
                             <td>Start date /End date</td>
@@ -80,9 +86,8 @@ export default class Invoice extends Component {
                             <td>Booking Time</td>
                             <td>{this.props.data.booking_date}</td>
                         </tr>
-                        <tr><td>1</td><td>2</td><td>3</td></tr>
+                        <tr><td></td><td></td><td></td></tr>
                     </table>
-                    {/* onClick={this.props.closePopup}  */}
                     {this.renderRedirect()}
                     <center><button className='button1' onClick={this.setRedirect}>Done</button></center>
                 </div>

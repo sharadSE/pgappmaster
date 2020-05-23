@@ -21,16 +21,16 @@ class Summary extends Component {
                 <div style={{color:"black",background:"#785587",width:"510px",height:"460px",marginLeft:"165px",marginTop:"50px",borderRadius:"10px"}}>
                 <p style={{left:"-180px",fontSize:"30px",fontWeight:"bolder",marginTop:"5px"}}>CheckOut</p>
                 <h5> Booking Summary</h5>
-                {console.log('message'),
+                {console.log('message Booking Summary page'),
                 console.log(this.props)}
                 {
                       this.props.bList.map((dat,key)=>(
-                        <li>` Bed{key} {this.props.bprice}`</li>
+                        <li>` Bed {key+1}--> {this.props.bprice}`</li>
                       ))
                     }
                     {
                       this.props.aList.map((data,key)=>(
-                        <li>`   {data.name} {data.charge}`</li>
+                        <li>`{data.name}-->{data.charge}`</li>
                       ))
                     } 
                     {<li>Total Price: {this.props.tprice}</li>}

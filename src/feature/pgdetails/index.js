@@ -13,7 +13,8 @@ class PgDetails extends Component {
         return(
             <>
                     {
-                        console.log('index pgdetails')
+                        console.log('index pgdetails'),
+                        console.log(this.props)
                     }
                    <div>
                        <FilterList />

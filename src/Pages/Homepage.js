@@ -1,19 +1,9 @@
 import React, {Component} from 'react'
-import ReactDom from 'react-dom'
 import './Home.css'
-import Header from '../header/header'
-import {NavLink} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import '../App.css'
 import Citynames from '../data/city.json'
 import Cityareas from '../data/cityarea.json'
-import queryString from 'query-string'
-import PgDetails from '../feature/pgdetails/index'
-import Pgdetails from './Pgdetails'
-import axios from 'axios'
-import { compose } from 'redux'
-import LoginPartner from './LoginPartner'
-
 export default class Homepage extends Component {
   constructor(props) {
     super(props)
@@ -60,7 +50,6 @@ export default class Homepage extends Component {
     const myvar = this.state.cityname;
     return (
       <>
-      
         <div className="header-banner">
           
   <div className="container-width">
