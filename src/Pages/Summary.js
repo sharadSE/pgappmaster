@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import CreditCard from '../feature/cart/CreditCard'
-// import './Summary.css';
+import '../feature/invoice/invo.css'
+import './summ.css'
 // import { TiShoppingCart } from "react-icons/ti";
 // import { IoIosTrash } from "react-icons/io";
 import axios from 'axios';
@@ -17,41 +18,39 @@ class Summary extends Component {
         return (
             <div>
                 <>
+                {
+                    console.log('summary'),
+                    console.log(this.props)
+                }
                 {/* <TiShoppingCart size='2.5rem' viewBox='0 0 21 21'/> */}
-                <div style={{color:"black",background:"#785587",width:"510px",height:"460px",marginLeft:"165px",marginTop:"50px",borderRadius:"10px"}}>
-                <p style={{left:"-180px",fontSize:"30px",fontWeight:"bolder",marginTop:"5px"}}>CheckOut</p>
-                <h5> Booking Summary</h5>
-                {console.log('message Booking Summary page'),
-                console.log(this.props)}
+                <div style={{color:"black",background:"#aa86b9",paddingLeft:"10px",width:"510px",height:"460px",marginLeft:"165px",marginTop:"50px",borderRadius:"10px"}}>
+                <p style={{left:"-180px",fontSize:"30px",fontWeight:"bolder",marginTop:"5px"}}> Booking Summary</p>
+                <h3>{this.props.location.data.data.name}</h3>
+                      <div>{this.props.location.data.data.address}</div>
+                      <div>  {this.props.location.data.data.city}  {this.props.location.data.data.state}  {this.props.location.data.data.pincode}</div>
+                <div className='summary'>
+                <table>
+                    <div className='summhead'>Selected Bed</div>
                 {
                       this.props.bList.map((dat,key)=>(
-                        <li>` Bed {key+1}--> {this.props.bprice}`</li>
+                        <tr><td>{`Bed ${key+1}`}</td><td><i class="fas fa-rupee-sign"></i>{this.props.bprice}</td></tr>
                       ))
                     }
+                    <div className='summhead'>Aminities Opted</div>
                     {
                       this.props.aList.map((data,key)=>(
-                        <li>`{data.name}-->{data.charge}`</li>
+                        <tr><td>{data.name}</td><td><i class="fas fa-rupee-sign"></i>{data.charge}</td></tr>
                       ))
-                    } 
-                    {<li>Total Price: {this.props.tprice}</li>}
+                    }
+                    <tr>
+                    {<div className='tprice'>Total Price: <i class="fas fa-rupee-sign"></i>{this.props.tprice}</div>}
+                    </tr> 
+                    </table>
+                    </div>
                 </div>
-    
-                {/*<div style={{color:"black",background:"#785587",width:"510px",height:"450px",marginLeft:"678px",marginTop:"-480px",borderRadius:"10px"}}>
-                <p style={{left:"-210px",fontSize:"30px",fontWeight:"bolder"}}>Payment</p>
-                <div style={{width:"400px",height:"170px",background:"black",marginLeft:"50px",color:"white",borderRadius:"10px",fontSize:"30px"}}>
-                    VISA
-                </div>
-                <div>
-                    <form>
-                <input type="text" id="name" style={{width:"400px",height:"35px",marginLeft:"50px",marginTop:"15px",borderRadius:"10px"}}/>
-               <input type="text" id="num" style={{width:"400px",height:"35px",marginLeft:"50px",marginTop:"5px",borderRadius:"10px"}}/>
-               <input type="date" id="exp" style={{width:"190px",height:"35px",marginLeft:"50px",marginTop:"5px",borderRadius:"10px"}}/>
-               <input type="text" id="cvv" style={{width:"190px",height:"35px",marginLeft:"20px",marginBottom:"5px",borderRadius:"10px"}}/>
-               <button style={{marginLeft:"45px",marginTop:"30px",width:"150px"}}>Pay</button>
-               </form>
-               </div>
-                </div>*/}
-                <div style={{float:"right",marginTop:"-460px",marginRight:"180px",width:"510px",height:"460px",background:"#785587",borderRadius:"10px"}}>
+                
+                {/* style={{float:"right" */}
+                <div style={{float:"right",marginTop:"-460px",marginRight:"180px",width:"510px",height:"460px",background:"#91739e",borderRadius:"10px"}}>
                     <CreditCard/>
                 </div>
                 </>

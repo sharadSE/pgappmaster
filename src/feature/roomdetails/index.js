@@ -32,8 +32,7 @@ class RoomDetails extends Component {
                     <div className='popup-inner'>
                       {
                         console.log('index roomdetails'),
-                        console.log(this.state.moredetails),
-                        console.log(this.props.start_date)
+                        console.log(this.state.moredetails)
                       }
                       <h3>{this.props.data.name}</h3>
                       <div className="address">{this.props.data.address}</div>
@@ -44,17 +43,18 @@ class RoomDetails extends Component {
                     {console.log(this.props.bList)}
                     {
                       this.props.bList.map((dat,key)=>(
-                        <li>`bed {key}--->{this.props.bprice}`</li>
+                        <li>{`Selected Bed     : ${this.props.bprice}`}</li>
                       ))
                     }
                     {
                       this.props.aList.map((data,key)=>(
-                        <li>`{data.name}--->{data.charge}`</li>
+                        <li>{`${data.name}     : ${data.charge}`}</li>
                       ))
                     } 
                     <button onClick={(event)=>this.clickHandler(event)}>
                     <Link to={{
-                    pathname:'/Summary'
+                    pathname:'/Summary',
+                    data:this.props
                     }}>Book</Link></button>
                     {/* <button onClick={()=>this.props.bookBed()}>Book</button> */}
                     {/* </NavLink> */}

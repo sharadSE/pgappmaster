@@ -38,48 +38,26 @@ export default class Roomdetaillist extends Component {
         return false
     }
     render() {
-        let message
-        if(this.state.signal){
-          message='Now select Aminities'
-        }
-        else {
-          message='Select Room First'
-        }
+        
         return (
             <>
-                <center><label>{message}</label></center>
                 {
                     console.log('room detail list problem--------------------------'),
-                    console.log(this.props.data),
-                    console.log(this.props.data.pincode),
-                    console.log(this.props.data.optionalAmenities),
-                    console.log(this.props.data.total_beds),
-                    console.log(this.props.data.available_beds),
-                    console.log(this.props.data.rooms)
+                    console.log(this.props.data)
 
                 }
-                {
-                    // <h1>{this.props.data.rooms.room_id}</h1>
-                }
-                {
-                    // this.props.data.rooms.map(data=>(
-                    //     <li>{data.room_id}</li>
-                    // ))
-                }
-                {/* ------------------------------------------------------ */}
-                {/* {this.props.data.rooms[data].room_id} */}
-                {/* ----------------------------------------------- */}
+                
                 {
                   this.props.data.rooms.map((data,key)=>(
                     <div className="dropdown">
                         <button className="dropbtn" key={key}>
-                                    Room {key}</button>
+                                    Room {key+1}</button>
                         <div className="dropdown-content">
                         {       
                                     data.bedList.map((d,key1)=>(
                                         <a href="#"
                                             onClick={(event)=>this.props.addBed(d,data.rent_per_bed)}
-                                    >Bed {d.tenant_id ? '-X' : key+1}</a>                          
+                                    >Bed {d.tenant_id ? '-X' : key1+1}</a>                          
                             ))
                         }
                         </div>

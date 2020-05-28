@@ -17,9 +17,6 @@ class PgDetails extends Component {
                         console.log(this.props)
                     }
                    <div>
-                       <FilterList />
-                   </div>
-                   <div>
                     {this.props.data.map((da,key)=>(
                         <Pgdetailslist key={key} data={da}></Pgdetailslist>
                         )

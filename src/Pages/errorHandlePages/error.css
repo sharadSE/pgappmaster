@@ -1,0 +1,16 @@
+ .error{
+    margin-top: 100px;
+    margin-left: 200px;
+    padding-top: 20px;
+    padding-left: 15px;
+    font-style: oblique;
+    margin-right: 650px;
+ }
+ .error .b1{
+    font-size: 40px;
+    font-weight: bold;
+ }
+ .error .b2{
+    font-size: 20px;
+    font-weight: 500;
+ }

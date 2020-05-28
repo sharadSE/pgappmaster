@@ -31,6 +31,7 @@ export default class Invoice extends Component {
             <div className='popup'>
                 <div className='popup-inner'>
                     <center><h2>Invoice</h2></center>
+                    <button onClick={this.props.closePopup} >X</button>
                     <table>
                         <tr>
                             <td>Invoice Id</td>
@@ -86,10 +87,11 @@ export default class Invoice extends Component {
                             <td>Booking Time</td>
                             <td>{this.props.data.booking_date}</td>
                         </tr>
-                        <tr><td></td><td></td><td></td></tr>
                     </table>
                     {this.renderRedirect()}
-                    <center><button className='button1' onClick={this.setRedirect}>Done</button></center>
+                    <div className='done'>
+                    <button className='button1' onClick={this.setRedirect}>Done</button>
+                    </div>
                 </div>
             </div>
             </>

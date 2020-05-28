@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './menu.css'
 import imj from './logo1.jpg'
 import RoomDetails from '../roomdetails/index'
-import axios from 'axios'
+const data='iVBORw0KGgoAAAANSUhEUgAAAKAAAAClCAYAAADbAvaeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAG/SURBVHhe7dIxAcAgEMDAL1a6tP4FwoKHLHdLDOT5/ncPRNYtJAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIyoCkDEjKgKQMSMqApAxIaOYA0HwCvQ+7ei4AAAAASUVORK5CYII='
 export default class Pgdetailslist extends Component {
     constructor(props) {
         super(props)
@@ -20,22 +20,23 @@ export default class Pgdetailslist extends Component {
       
       
     render() {
-
+        if(this.props.data){
         return (
         <>
         <div className="list-container">
         <div className="place booked">
             {
                 console.log('pgdetaillist'),
-                console.log(this.props)
+                console.log(this.props.data)
             }
-        <img src={imj}></img>
+        
+        <img src={`data:image/jpeg;base64,${data}`} />
             <h3>{this.props.data.name}</h3>
             <div className="beds"><i class="fas fa-bed"></i>3 Beds / Room</div>
             <div className="address">{this.props.data.address}</div>
             <div className="address">  {this.props.data.city}  {this.props.data.state}  {this.props.data.pincode}</div>
             <div className="price-label">
-                Min Price
+                Room Rent
                 <div className="price-lebel price"><i class="fas fa-rupee-sign"></i>{this.props.data.rent_min}</div>
             </div>
             {/* to disply no of bed-------------- */}
@@ -50,7 +51,7 @@ export default class Pgdetailslist extends Component {
                 <div>
                 {this.props.data.basicAmenities.map(data=>(
                     
-                    <div><i className="fas fa-wifi"></i>{data}</div>)
+                    <div><i class="fas fa-arrow-circle-right"></i>{data}</div>)
                     )}
                 {/* <div><i class="fas fa-wifi"></i>Wifi Available</div>
                 <div><i class="fas fa-couch"></i>Furnished</div>
@@ -68,5 +69,7 @@ export default class Pgdetailslist extends Component {
         }
         </>
         )
+    }
+    return null;
     }
 }
