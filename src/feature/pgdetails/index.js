@@ -18,7 +18,7 @@ class PgDetails extends Component {
                     }
                    <div>
                     {this.props.data.map((da,key)=>(
-                        <Pgdetailslist key={key} data={da}></Pgdetailslist>
+                        <Pgdetailslist key={key} data={da} startd={this.props.startd} endd={this.props.endd}></Pgdetailslist>
                         )
                         )}
                         </div>

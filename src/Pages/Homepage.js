@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import '../App.css'
 import Citynames from '../data/city.json'
 import Cityareas from '../data/cityarea.json'
+import {format} from 'date-fns'
 export default class Homepage extends Component {
   constructor(props) {
     super(props)
@@ -85,7 +86,7 @@ export default class Homepage extends Component {
       </div>
       <div className="form-group">
         <label className="label">End Date</label>
-        <input type="date" value={this.enddate} onChange={this.enddateHandler} placeholder="estimated" required type="date" className="input"/>
+        <input type="date" value={this.enddate} min={format(this.state.startdate,"YYYY-MM-DD")} onChange={this.enddateHandler} placeholder="estimated" required type="date" className="input"/>
       </div>
       <div className="form-group">
         <label className="label">No. of Guest</label>

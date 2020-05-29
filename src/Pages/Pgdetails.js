@@ -11,16 +11,16 @@ export default class Pgdetails extends Component {
         this.state = {
             isFetching:false,
             redirect: false,
+            cityname:this.props.location.data.cityname,
+            cityarea:this.props.location.data.cityarea,
+            startdate:this.props.location.data.startdate,
+            enddate:this.props.location.data.enddate,
+            noofguest:this.props.location.data.noofguest,
          database:[]    
         }
     }
-    renderRedirect = () => {
-        if (this.state.redirect) {
-          return <Redirect to='/' />
-        }
-      }
     componentDidMount(){
-     axios.get('http://localhost:8081/getpg',{params:{city:this.props.location.data.cityname,area:this.props.location.data.cityarea,start_date:this.props.location.data.startdate,end_date:this.props.location.data.enddate,no_of_guest:this.props.location.data.noofguest}})
+     axios.get('http://localhost:8081/getpg',{params:{city:this.state.cityname,area:this.state.cityarea,start_date:this.state.startdate,end_date:this.state.enddate,no_of_guest:this.state.noofguest}})
     .then(response =>{
       this.setState({database:response.data})
     })
@@ -44,7 +44,7 @@ export default class Pgdetails extends Component {
             {console.log('pages pgdetails'),
             console.log(this.state.database)}
             
-        <PgDetails data={this.state.database}></PgDetails>
+        <PgDetails data={this.state.database} startd={this.state.startdate} endd={this.state.enddate}></PgDetails>
         </div>
         )
         }

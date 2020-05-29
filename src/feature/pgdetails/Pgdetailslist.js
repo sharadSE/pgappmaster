@@ -27,10 +27,11 @@ export default class Pgdetailslist extends Component {
         <div className="place booked">
             {
                 console.log('pgdetaillist'),
-                console.log(this.props.data)
+                console.log(this.props)
             }
         
         <img src={`data:image/jpeg;base64,${data}`} />
+        
             <h3>{this.props.data.name}</h3>
             <div className="beds"><i class="fas fa-bed"></i>3 Beds / Room</div>
             <div className="address">{this.props.data.address}</div>
@@ -63,6 +64,8 @@ export default class Pgdetailslist extends Component {
         {this.state.showPopup ? 
           <RoomDetails
             data={this.props.data}
+            startd={this.props.startd}
+            endd={this.props.endd}
             closePopup={this.togglePopup.bind(this)}
           />
           : null

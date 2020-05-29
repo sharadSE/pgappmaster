@@ -14,6 +14,7 @@ class RoomDetails extends Component {
     }
   }
   componentDidMount(){
+    // axios.get('http://localhost:8081/getpg/'+this.props.data.pg_id+'/'+this.props.startd+'/'+this.props.endd)
     axios.get('http://localhost:8081/getpg/'+this.props.data.pg_id)
     .then(res => {
        this.setState({moredetails:res.data})
@@ -32,6 +33,8 @@ class RoomDetails extends Component {
                     <div className='popup-inner'>
                       {
                         console.log('index roomdetails'),
+                        console.log(this.props),
+                        console.log('moredetails'),
                         console.log(this.state.moredetails)
                       }
                       <h3>{this.props.data.name}</h3>
